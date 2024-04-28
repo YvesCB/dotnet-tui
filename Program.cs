@@ -17,6 +17,20 @@
     private int _height;
 
     private List<Pane> _panes;
+
+    public HorizontalLayout(int width, int height)
+    {
+      _width = width;
+      _height = height;
+
+      _panes = new List<Pane>();
+    }
+
+    public void AddPane(Action Render)
+    {
+      Pane new_pane = new Pane(_width / _panes.Count, _height);
+      _panes.Add(new_pane);
+    }
   }
 
   class Pane
